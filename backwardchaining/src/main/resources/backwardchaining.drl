@@ -45,7 +45,7 @@ when
     String( this == "go3" )
     isContainedIn("Key", "Office"; )
 then
-    System.out.println( "Draw is in the office" );
+    System.out.println( "Key is in the office" );
 end
 
 rule "go4" 

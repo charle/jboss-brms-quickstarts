@@ -70,20 +70,18 @@ public class BackwardchainingTest {
     public void testGo3() {
     	ksession.insert( "go3" );
         ksession.fireAllRules();
-        System.out.println("---");
-    }
-    @Test
-    public void keyInDraw() {
-    	ksession.insert( "go3" );
+        System.out.println("--- No key in the Office, now key is being added in the draw --- fireAllRule() ---");
+        ksession.insert( new Location("Key", "Draw") );
         ksession.fireAllRules();
         System.out.println("---");
     }
     @Test
     public void testGo4() {
-    	ksession.insert( new Location("Key", "Draw") );
+    	ksession.insert( "go4" );
         ksession.fireAllRules();
         System.out.println("---");
     }
+   
     @Test
     public void testGo5() {
     	ksession.insert( "go5" );
