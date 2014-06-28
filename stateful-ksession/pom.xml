@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
     JBoss, Home of Professional Open Source
     Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
@@ -14,8 +14,7 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.quickstarts.brms</groupId>
     <artifactId>brms-stateful-ksession</artifactId>
@@ -179,4 +178,26 @@
             </plugin>
         </plugins>
     </build>
+<profiles>
+        <profile>
+<!-- When built in OpenShift the openshift profile will be used when invoking mvn. -->
+<!-- Use this profile for any OpenShift specific customization your app will need. -->
+<!-- By default that is to put the resulting archive into the deployments folder. -->
+<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+<id>openshift</id>
+<build>
+   <finalName>brms-stateful-ksession</finalName>
+   <plugins>
+     <plugin>
+       <artifactId>maven-war-plugin</artifactId>
+       <version>2.4</version>
+       <configuration>
+         <outputDirectory>deployments</outputDirectory>
+         <warName>ROOT</warName>
+       </configuration>
+     </plugin>
+   </plugins>
+ </build>
+</profile>
+    </profiles>
 </project>
