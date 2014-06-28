@@ -1,4 +1,4 @@
-helloworld-drl: BRMS Basic DRL example
+Bacwardchaining: Bacwardchaining Basic DRL example
 ======================================
 Author: Marco Battaglia  
 Level: Beginner  
