@@ -131,37 +131,6 @@
             <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
             <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
             <id>openshift</id>
-            <repositories>
-            <repository>
-                    <id>brms-m2-repo</id>
-                    <name>BRMS M2 Repo</name>
-                    <url>http://bpmtraining-ienki.rhcloud.com/business-central/maven2/</url>
-                </repository>
-        <repository>
-          <id>jboss-developer-repository</id>
-          <url>http://jboss-developer.github.io/temp-maven-repo/</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <id>jboss-developer-plugin-repository</id>
-          <url>http://jboss-developer.github.io/temp-maven-repo/</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-        </pluginRepository>
-      </pluginRepositories>
-                
-           
             <build>
                 <plugins>
                     <plugin>
