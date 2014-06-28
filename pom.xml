@@ -56,5 +56,6 @@
         <module>store-brms</module>
         <module>tasks-bpmsuite</module>
         <module>business-resource-planner</module>
+        <module>backwardchaining</module>
     </modules>
 </project>
