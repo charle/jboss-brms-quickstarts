@@ -36,17 +36,10 @@ Configure Maven
 If you have not yet done so, you must [Configure Maven](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_MAVEN.md#configure-maven-to-build-and-deploy-the-quickstarts) before testing the quickstarts.
 
 
-Start the JBoss Server
+Create and start Openshift BPMsuite Cartridge
 -----------
 
-If you have not yet done so, you must [Configure BRMS](../README.md#configure-brms) before testing the quickstart.
-
-1. Open a command line and navigate to the root of the BRMS directory.
-2. The following shows the command line to start the server:
-
-        For Linux:   EAP_HOME/bin/standalone.sh
-        For Windows: EAP_HOME\bin\standalone.bat
-
+TODO: prepare a cartridge changing url_filter in business-central.war/WEB-INF/classes in order to make maven repo accessible
 
 Import the BRMS Repository
 ----------------------
@@ -59,18 +52,18 @@ Deploy BRMS kmodule
 
 1. [Start the JBoss Server](#start-the-jboss-server) as instructed above.
 
-2. Open a browser and access the following URL: <http://localhost:8080/business-central> 
+2. Open a browser and access the following URL: <http://[change].rhcloud.com/business-central> 
 
 2. Log in with the following credentials:
 
-        Username:  quickstartUser
-        Password:  quickstartPwd1!
+        Username:  bpm-admin
+        Password:  _italic_ bpmadmin password generated during openshift BPMSuite cartridge installation
 
 3. Choose menu option `Authoring` -> `Project Authoring`
 
 4. Choose the following options under `Project Explorer`:
 
-        Organizational Unit:  example
+        Organizational Unit:  demo
         Repository Name:      jboss-brms-repository
         BRMS Kmodule:         helloworld-brms-kmodule
 
@@ -95,9 +88,9 @@ Run the Tests
 
 4. Now run the following command to run the test goal with the following profiles activated:
 
-        mvn clean test -Penable-test,brms
+        mvn clean test -Penable-test,brms -DBPMSuiteOpenshift="http://[change].rhcloud.com/business-central/maven2/"
 
-The `brms` profile enables the `http://localhost:8080/business-central/maven2/` repository and adds the `org.jboss.quickstarts.brms:helloworld-brms-kmodule:1.0.0` as a project dependency. 
+The `brms` profile enables the `http://[change].rhcloud.com/business-central/maven2/` repository and adds the `org.jboss.quickstarts.brms:helloworld-brms-kmodule:1.0.0` as a project dependency. 
 
 Now the tests complete successfully.
 
