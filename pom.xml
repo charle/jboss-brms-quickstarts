@@ -57,5 +57,6 @@
         <module>tasks-bpmsuite</module>
         <module>business-resource-planner</module>
         <module>backwardchaining</module>
+        <module>remote-api</module>
     </modules>
 </project>
