@@ -1,7 +1,7 @@
 Bacwardchaining: Bacwardchaining Basic DRL example
 ======================================
 Author: Marco Battaglia  
-Level: Beginner  
+Level: Medium  
 Technologies: Drools  
 Summary: Shows how to use Drools 6  
 Target Product: BRMS  
